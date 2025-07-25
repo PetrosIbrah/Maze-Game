@@ -30,7 +30,7 @@ Map :: Map(const string& FileName) {
     int ColNum;
 
    if (!file) {
-        cerr << "Αδυναμία εύρεσης αρχείου: " << FileName << endl;
+        cerr << "Couldn't find file: " << FileName << endl;
        exit(1);
     }
 

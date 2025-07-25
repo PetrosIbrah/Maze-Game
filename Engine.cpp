@@ -9,8 +9,8 @@ Engine :: ~Engine(){};
 
 // Window initializations and main accessibility
 void Engine :: Window() {
-    system ("chcp 1253"); // Διαγραφή αν τρέχει σε Linux.
-    system("cls"); // Διαγραφή αν τρέχει σε Linux.
+    system ("chcp 1253");
+    system("cls");
 
     // Window initialization
     WINDOW* win;
@@ -117,11 +117,11 @@ void Engine :: Window() {
     endwin();
     // Displays the situation of the ended game (Win, lose or quit)
     if (S.GetW() == 1){
-        cout << "ΝΊΚΗΣΑΤΕ!" << endl;
+        cout << "VICTORY!" << endl;
     } else if (S.GetW() == -1){
-        cout << "Τερματισμός Παινχιδιού." << endl;
+        cout << "Game exited." << endl;
     } else {
-        cout << "Χάσατε..." << endl;
+        cout << "Defeat..." << endl;
     }
 };
 
@@ -129,27 +129,27 @@ void Engine :: Window() {
 // Allowing the User choose one of the existing Maps or inputs another Map
 void Engine :: Menu(string& MapName) {
     cout << "\033[2J\033[1;1H";
-    cout << "Διαλέξτε ένα άπο τα παρακάτω." << endl;
-    cout << "=============================" << endl;
-    cout << "1. Χάρτης 1" << endl;
-    cout << "2. Χάρτης 2" << endl;
-    cout << "3. Βάτλε δικό σας Χάρτη" << endl;  
-    cout << "=======================" << endl;
+    cout << "Please choose one of the following." << endl;
+    cout << "===================================" << endl;
+    cout << "1. Map 1" << endl;
+    cout << "2. Map 2" << endl;
+    cout << "3. Insert your own Map" << endl;  
+    cout << "======================" << endl;
     int ch;
     do {
-        cout << "Η επιλογή σας είναι: ";
+        cout << "Your choice: ";
         cin >> ch;
     } while (ch > 3);
     
     if (ch == 1) {
-        cout << "=======================" << endl;
+        cout << "==============" << endl;
         MapName = "Maze.txt";
     } else if (ch == 2) {
-        cout << "=======================" << endl;
+        cout << "==============" << endl;
         MapName = "Maze2.txt";
     } else {
-        cout << "Το όνομα του αρχείου σας είναι: ";
+        cout << "Your Map's file name is: ";
         cin >> MapName;
-        cout << "===============================" << endl;
+        cout << "=========================" << endl;
     }
 };
